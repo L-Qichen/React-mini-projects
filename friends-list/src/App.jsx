@@ -1,13 +1,18 @@
+import { useState } from 'react'
 import List from "./List"
-import Friends from "./data"
+import data from "./data"
+import './style.css'
 
 function App() {
+  const [friends, SetFriends] = useState(data);
+  console.log(friends);
 
   return (
     <>
-      <div className="container" style={{ border: "1px solid red" }}>
-        Friends List:
-        <List />
+      <div className="main">
+        <h2 className='title'>{friends.length} friends in list:</h2>
+        <List friends={friends} />
+        <button type='button' className='btn' onClick={() => SetFriends([])}>clear all</button>
       </div>
     </>
   )
