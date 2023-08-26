@@ -1,13 +1,17 @@
 import Friend from "./Friend";
 
-const List = () => {
+const List = ({ friends }) => {
 
 
   return (
-    <>
-      <h3>List component</h3>
-      <Friend />
-    </>
+    <ol>
+      {friends.map((friend) => {
+        return (
+          <li key={friend.id}>
+            <Friend {...friend} />
+          </li>)
+      })}
+    </ol >
   )
 }
 
