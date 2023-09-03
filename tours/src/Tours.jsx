@@ -6,7 +6,7 @@ export const Tours = ({ tours }) => {
   return (
     <>
       <h1 className="header">Our Tours</h1>
-      <div style={{ border: "1px solid red" }}>
+      <div className="main">
         {tours.map((tour) => {
           return (
             <div key={tour.id} style={{ border: "1px solid blue" }}>
