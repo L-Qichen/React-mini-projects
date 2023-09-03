@@ -1,6 +1,6 @@
 export const Loading = () => {
 
   return (
-    <>Loading</>
+    <h1>Loading</h1>
   )
 }
