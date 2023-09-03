@@ -15,10 +15,26 @@ body{
   color: #292929;
 }
 .container{
-  padding: 3rem;
+  padding: 3.5rem 1.5rem;
 }
 h1{
   margin: 1rem auto;
   text-align: center;
 }
+
+/* tours mini project style */
+.header{
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+.header::after{
+  content: "";
+  display: block;
+  border: 2px solid #10b981;
+  width: 7rem;
+  margin:.5rem auto;
+  border-radius: 2px;
+}
+
 
