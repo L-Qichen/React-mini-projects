@@ -27,6 +27,11 @@ function App() {
     fetchData();
   }, []);
 
+  const deleteTour = (id) => {
+    const newTours = tours.filter((tour) => { return tour.id !== id });
+    setTours(newTours);
+  }
+
   if (isLoading) {
     return (
       <>
@@ -40,7 +45,7 @@ function App() {
   return (
     <>
       <div className='container'>
-        <Tours tours={tours} />
+        <Tours tours={tours} deleteTour={deleteTour} />
       </div>
     </>
   )

@@ -1,7 +1,6 @@
 import { Tour } from "./Tour"
 
-export const Tours = ({ tours }) => {
-  console.log(tours);
+export const Tours = ({ tours, deleteTour }) => {
 
   return (
     <>
@@ -10,7 +9,7 @@ export const Tours = ({ tours }) => {
         {tours.map((tour) => {
           return (
             <div key={tour.id} className="card">
-              <Tour tour={tour} />
+              <Tour tour={tour} deleteTour={deleteTour} />
             </div>
           )
         })}
