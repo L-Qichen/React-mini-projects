@@ -5,8 +5,8 @@ export const Tour = ({ tour }) => {
     <>
       <img src={image} alt={name} />
       <span className="price">${price}</span>
-      <h3>{name}</h3>
-      <p>{info}</p>
+      <h3 className="tourName">{name}</h3>
+      <p className="info">{info}</p>
     </>
   )
 }
