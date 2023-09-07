@@ -58,9 +58,32 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1),
   0 1px 2px rgba(0, 0, 0, 0.06);
   transition: .3s ease-in-out all;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  position: relative;
 }
 
 .card:hover {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
   0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card img {
+  height: 20rem;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.card .price {
+  position:absolute;
+  top: 0;
+  right: 0;
+  padding: .5rem;
+  background:#10b981;
+  letter-spacing: 2px;
+  color: #fff;
+  border-top-right-radius: .25rem;
 }
