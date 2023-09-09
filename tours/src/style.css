@@ -68,7 +68,6 @@
 .card .info {
   padding: 0 1rem 2rem 1rem;
   line-height: 1.5;
-  border: 1px solid red;
 }
 
 .card .tourName{
@@ -111,9 +110,9 @@
 }
 
 .card .read-more{
-  display: inline;
-  border:1px solid red;
+  cursor: pointer;
+  margin-left: .25rem;
   color: #10b981;
-  font-weight: 550;
+  font-weight: 600;
   line-height: 1.5;
 }
