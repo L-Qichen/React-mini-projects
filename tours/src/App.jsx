@@ -42,6 +42,19 @@ function App() {
     )
   }
 
+  if (tours.length === 0) {
+    return (
+      <>
+        <div className='container'>
+          <h1 className="header">No Tours Left</h1>
+          <div className='no-tours'>
+            <button type='button' className='btn' onClick={() => fetchData()}>Refresh</button>
+          </div>
+        </div >
+      </>
+    )
+  }
+
   return (
     <>
       <div className='container'>
