@@ -1,0 +1,118 @@
+/* tours mini project style */
+.header{
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+.header::after{
+  content: "";
+  display: block;
+  border: 2px solid #10b981;
+  width: 7rem;
+  margin:.5rem auto;
+  border-radius: 2px;
+}
+
+.main{
+  display: grid;
+  padding: 2rem 0;
+  gap: 2rem;
+}
+
+@media screen and (min-width:768px) {
+  .main{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width:992px) {
+  .main{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card {
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1),
+  0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: .3s ease-in-out all;
+  border-radius: 0.25rem;
+  position: relative;
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card img {
+  height: 20rem;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.card .price {
+  position:absolute;
+  top: 0;
+  right: 0;
+  padding: .5rem;
+  background:#10b981;
+  letter-spacing: 2px;
+  color: #fff;
+  border-top-right-radius: .25rem;
+}
+
+.card .info {
+  padding: 0 1rem 2rem 1rem;
+  line-height: 1.5;
+}
+
+.card .tourName{
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.card .btn-block{
+  margin: 0 2rem;
+}
+
+.btn{
+  width: 100%;
+  cursor: pointer;
+  color: #10b981;
+  background: #fff;
+  border: 1px solid #10b981;
+  border-radius: .25rem;
+  letter-spacing: 1px;
+  padding: 6px;
+  font-size: 16px;
+  margin-bottom: 2rem;
+  box-shadow:  0 1px 3px 0 rgba(0, 0, 0, 0.1), 
+  0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease-in-out all;
+  text-transform: capitalize;
+}
+.btn:hover{
+  background: #10b981;
+  color: #fff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.no-tours{
+  width: 50%;
+  margin: 2rem auto;
+}
+
+.card .read-more{
+  cursor: pointer;
+  margin-left: .25rem;
+  color: #10b981;
+  font-weight: 600;
+  line-height: 1.5;
+}
