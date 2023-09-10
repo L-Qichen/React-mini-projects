@@ -8,18 +8,22 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1>Reviews</h1>
-        <img src={image} alt={name} />
-        <h3>{name}</h3>
-        <h5>{job}</h5>
-        <p>{text}</p>
-        <div>
-          <button>left</button>
-          <button>right</button>
+      <div className='container'>
+        <h1 className='header' style={{ marginBottom: '3rem' }}>Reviews</h1>
+        <div className='card'>
+          <div className='avatar'>
+            <img src={image} alt={name} />
+          </div>
+          <h3 className='name'>{name}</h3>
+          <h5 className='title'>{job}</h5>
+          <p className='info'>{text}</p>
+          <div>
+            <button>left</button>
+            <button>right</button>
+          </div>
+          <button>surprise me</button>
         </div>
-        <button>surprise me</button>
-      </div>
+      </div >
     </>
   )
 }

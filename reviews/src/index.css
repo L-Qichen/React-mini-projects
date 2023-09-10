@@ -15,8 +15,8 @@ body{
   color: #292929;
 }
 .container{
-  width: 90vw;
-  max-width: 1120px;
+  width: 45vw;
+  min-width: 450px;
   margin: 3.5rem auto;
 }
 h1{
