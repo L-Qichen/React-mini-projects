@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import data from "./data"
 import './style.css'
+import { BiSolidQuoteRight } from 'react-icons/bi';
 
 function App() {
   const [index, setIndex] = useState(0);
@@ -13,6 +14,7 @@ function App() {
         <div className='card'>
           <div className='avatar'>
             <img src={image} alt={name} />
+            <BiSolidQuoteRight className='quote' />
           </div>
           <h3 className='name'>{name}</h3>
           <h5 className='title'>{job}</h5>
