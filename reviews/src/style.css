@@ -68,8 +68,11 @@
 }
 
 .card .info {
-  padding: 0 1rem 2rem 1rem;
+  padding: 0 2.1rem;
   line-height: 1.5;
+  color: #475569;
+  margin-bottom: .75rem;
+  text-align: center;
 }
 
 .card .name{
