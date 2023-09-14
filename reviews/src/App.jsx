@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import data from "./data"
 import './style.css'
-import { BiSolidQuoteRight } from 'react-icons/bi';
+import { BiSolidQuoteRight, BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 
 function App() {
   const [index, setIndex] = useState(0);
@@ -19,11 +19,17 @@ function App() {
           <h3 className='name'>{name}</h3>
           <h5 className='title'>{job}</h5>
           <p className='info'>{text}</p>
-          <div>
-            <button>left</button>
-            <button>right</button>
+          <div className='l-r-buttons-container'>
+            <button className='l-button'>
+              <BiChevronLeft />
+            </button>
+            <button className='r-button'>
+              <BiChevronRight />
+            </button>
           </div>
-          <button>surprise me</button>
+          <div className='btn-container'>
+            <button className='btn'>surprise me</button>
+          </div>
         </div>
       </div >
     </>

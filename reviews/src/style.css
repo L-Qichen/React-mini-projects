@@ -94,16 +94,33 @@
   letter-spacing: 1px;
 }
 
+.card .l-r-buttons-container{
+  display: flex;
+  justify-content: center;
+  >.l-button, .r-button{
+    background: none;
+    border: none;
+    color: #352fa8;
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+}
+
 .card .btn-block{
   margin: 0 2rem;
 }
 
+.btn-container{
+  display: flex;
+  justify-content: center;
+}
+
 .btn{
-  width: 100%;
+  border: none;
+  width: 7rem;
   cursor: pointer;
-  color: #10b981;
-  background: #fff;
-  border: 1px solid #10b981;
+  color: #645cff;
+  background: #c1beff;
   border-radius: .25rem;
   letter-spacing: 1px;
   padding: 6px;
@@ -115,8 +132,8 @@
   text-transform: capitalize;
 }
 .btn:hover{
-  background: #10b981;
-  color: #fff;
+  background: #645cff;
+  color: #c1beff;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
   0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
