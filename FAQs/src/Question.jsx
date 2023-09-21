@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { IoIosAddCircle } from 'react-icons/io'
+import { IoIosAddCircle, IoIosRemoveCircle } from 'react-icons/io'
 
 const Question = ({ title, info }) => {
   const [isShowed, setIsShowed] = useState(false);
@@ -10,14 +10,13 @@ const Question = ({ title, info }) => {
 
   return (
     <>
-      <h3>{title}</h3>
-      <button type="button" className="btn" onClick={onclickHandle}>
-        <IoIosAddCircle />
-      </button>
-      {isShowed ?
-        <p>{info}</p> :
-        <></>
-      }
+      <div className='banner'>
+        <h3>{title}</h3>
+        <button type="button" className="btn" onClick={onclickHandle}>
+          {isShowed ? <IoIosRemoveCircle /> : <IoIosAddCircle />}
+        </button>
+      </div>
+      {isShowed ? <p>{info}</p> : <></>}
     </>
   )
 }

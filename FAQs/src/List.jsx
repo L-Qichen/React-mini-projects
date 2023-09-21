@@ -10,7 +10,7 @@ const List = ({ questions }) => {
           {questions.map((question) => {
             const { id, title, info } = question;
             return (
-              <div className="card" key={id} style={{ border: "1px solid red" }}>
+              <div className="list-element" key={id}>
                 <Question title={title} info={info} />
               </div>
             )
