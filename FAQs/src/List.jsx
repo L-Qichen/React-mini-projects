@@ -1,7 +1,6 @@
 import Question from "./Question";
 
 const List = ({ questions }) => {
-  console.log(questions);
 
   return (
     <>
@@ -9,9 +8,10 @@ const List = ({ questions }) => {
         <div className="card">
           <h1>Questions</h1>
           {questions.map((question) => {
+            const { id, title, info } = question;
             return (
-              <div className="card" key={question.id} style={{ border: "1px solid red" }}>
-                <Question />
+              <div className="card" key={id} style={{ border: "1px solid red" }}>
+                <Question title={title} info={info} />
               </div>
             )
           })}
