@@ -6,7 +6,6 @@ import './style.css'
 
 function App() {
   const [questions, setQuestions] = useState(data);
-  console.log(questions);
 
   return (
     <>
