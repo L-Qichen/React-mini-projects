@@ -4,7 +4,7 @@ const List = ({ questions }) => {
 
   return (
     <>
-      <div className="container">
+      <div>
         <div className="card">
           <h1>Questions</h1>
           {questions.map((question) => {
