@@ -1,0 +1,139 @@
+/* menu mini project style */
+.header{
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+.header::after{
+  content: "";
+  display: block;
+  border: 2px solid #645cff;
+  width: 7rem;
+  margin:.5rem auto;
+  border-radius: 2px;
+}
+
+.card {
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1),
+  0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: .3s ease-in-out all;
+  border-radius: 0.25rem;
+  padding-top: 2.5rem;
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card .avatar {
+  border-radius: 50%;
+  height: 10rem;
+  width: 10rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.card .avatar::before{
+  content: "";
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  position:absolute;
+  top: -.25rem;
+  left: .5rem;
+  background: #645cff;
+}
+
+.card .avatar .quote{
+  font-size: 2.5rem;
+  padding: .6rem;
+  border-radius: 50%;
+  color: white;
+  background: #645cff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(25%);
+}
+
+.card img {
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.card .info {
+  padding: 0 2.1rem;
+  line-height: 1.5;
+  color: #475569;
+  margin-bottom: .75rem;
+  text-align: center;
+}
+
+.card .name{
+  text-align: center;
+  font-weight: 440;
+  font-size: 24px;
+  margin: 1rem 0 .5rem 0;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.card .title{
+  text-align: center;
+  color: #645cff;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.card .l-r-buttons-container{
+  display: flex;
+  justify-content: center;
+  >.l-button, .r-button{
+    background: none;
+    border: none;
+    color: #352fa8;
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+}
+
+.card .btn-block{
+  margin: 0 2rem;
+}
+
+.btn-container{
+  display: flex;
+  justify-content: center;
+}
+
+.btn{
+  border: none;
+  width: 7rem;
+  cursor: pointer;
+  color: #645cff;
+  background: #c1beff;
+  border-radius: .25rem;
+  letter-spacing: 1px;
+  padding: 6px;
+  font-size: 16px;
+  margin-bottom: 2rem;
+  box-shadow:  0 1px 3px 0 rgba(0, 0, 0, 0.1), 
+  0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease-in-out all;
+  text-transform: capitalize;
+}
+.btn:hover{
+  background: #645cff;
+  color: #c1beff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
