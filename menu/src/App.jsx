@@ -1,12 +1,13 @@
 import { useState } from 'react'
+import Title from './Title'
 import './style.css'
 
 function App() {
 
   return (
-    <>
-      <h1>Menu</h1>
-    </>
+    <article className='menu'>
+      <Title />
+    </article>
   )
 }
 

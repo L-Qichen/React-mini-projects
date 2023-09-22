@@ -1,4 +1,8 @@
 /* menu mini project style */
+.menu{
+  padding: 4rem 0;
+}
+
 .header{
   font-weight: 400;
   font-size: 2.5rem;
@@ -7,7 +11,7 @@
 .header::after{
   content: "";
   display: block;
-  border: 2px solid #645cff;
+  border: 2px solid #f59e0b;
   width: 7rem;
   margin:.5rem auto;
   border-radius: 2px;
