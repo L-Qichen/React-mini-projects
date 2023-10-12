@@ -3,18 +3,16 @@ import { MenuItem } from "./MenuItem";
 const Menu = ({ menu }) => {
 
   return (
-    <>
+    <div className="main">
       {
         menu.map((item) => {
           return (
-            <div className="card" key={item.id}>
-              <MenuItem {...item} />
-            </div >
+            <MenuItem key={item.id} {...item} />
           );
 
         })
       }
-    </>
+    </div>
   );
 }
 
