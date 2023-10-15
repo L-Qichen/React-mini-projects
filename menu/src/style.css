@@ -17,19 +17,49 @@
   border-radius: 2px;
 }
 
+.btn-container{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2rem 0 4rem 0;
+}
+
+.btn{
+  cursor: pointers;
+  color: #fff;
+  background: #f59e0b;
+  border: transparent;
+  letter-spacing: 1px;
+  padding: .375rem .75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease-in-out all;
+  text-transform: capitalize;
+  display: inline-block;
+  border-radius: .25rem;
+}
+
+.btn:hover {
+  background: #b45309;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
 .main{
-  border: 1px solid red;
   display: grid;
   width: 90vw;
   margin: 0 auto;
   max-width: 1120px;
   gap: 2rem;
+  justify-content: center;
 }
 
 .menu-item{
   background: #fff;
   border-radius: .25rem;
   > .img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
     height: 15rem;
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
@@ -37,3 +67,45 @@
   max-width: 25rem;
 }
 
+.item-info{
+  padding: 1.5rem;
+  > .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.item-info h3{
+  font-weight: 500;
+}
+
+.item-price{
+  background: #f59e0b;
+  padding: 0.25rem 0.5rem;
+  color: #fff;
+  letter-spacing: 1px;
+  border-radius: .24rem;
+}
+
+.item-text{
+  line-height: 2;
+  color: #64748b;
+}
+
+@media screen and (min-width:992px){
+  .main{
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+@media screen and (min-width:1170px){
+  .main{
+    grid-template-columns: repeat(3, 1fr);
+    width: 95vw;
+  }
+}
