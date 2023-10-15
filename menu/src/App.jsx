@@ -10,11 +10,21 @@ function App() {
   const categoriesSet = new Set(['all', ...menu.map((item) => item.category)]);
   const [categories, setCategories] = useState(Array.from(categoriesSet));
 
+  const onClickHandle = (category) => {
+    if (category === 'all') {
+      setMenu(data);
+      return;
+    } else {
+      const newMenu = data.filter((item) => { return item.category === category });
+      setMenu(newMenu)
+    }
+  }
+
 
   return (
     <article className='menu'>
       <Title />
-      <Categories categories={categories} />
+      <Categories categories={categories} onClickHandle={onClickHandle} />
       <Menu menu={menu} />
     </article>
   )
