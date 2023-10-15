@@ -6,6 +6,9 @@ import './style.css'
 
 function App() {
   const [menu, setMenu] = useState(data);
+  const categoriesSet = new Set(['all', ...data.map((item) => item.category)]);
+  const [categories, setCategories] = useState(categoriesSet);
+
 
   return (
     <article className='menu'>
