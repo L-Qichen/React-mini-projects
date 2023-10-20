@@ -1,3 +1,5 @@
+import Duties from "./Duties";
+
 const JobInfo = ({ jobs }) => {
 
   const { company, dates, title, duties } = jobs[0];
@@ -7,7 +9,7 @@ const JobInfo = ({ jobs }) => {
       <div>{company}</div>
       <div>{dates}</div>
       <div>{title}</div>
-      <div>{duties}</div>
+      <Duties duties={duties} />
     </div>
   );
 }
