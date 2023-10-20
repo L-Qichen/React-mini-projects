@@ -26,7 +26,6 @@ const App = () => {
       <div className='loading'>Loading。。</div>
     )
   }
-  console.log(currentItem);
   return (
     <>
       <BtnContainer
