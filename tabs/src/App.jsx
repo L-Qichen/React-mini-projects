@@ -23,11 +23,13 @@ const App = () => {
 
   if (isLoading) {
     return (
-      <div className='loading'>Loading。。</div>
+      <div className='loading-container'>
+        <div className='loading'></div>
+      </div>
     )
   }
   return (
-    <>
+    <div className='main'>
       <BtnContainer
         jobs={jobs}
         currentItem={currentItem}
@@ -35,7 +37,7 @@ const App = () => {
       />
       <JobInfo jobs={jobs}
         currentItem={currentItem} />
-    </>
+    </div>
   )
 }
 
