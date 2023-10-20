@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import JobInfo from './JobInfo';
 import './style.css'
 
 const url = 'https://course-api.com/react-tabs-project';
@@ -26,6 +27,7 @@ const App = () => {
 
   return (
     <>
+      <JobInfo jobs={jobs} />
     </>
   )
 }
