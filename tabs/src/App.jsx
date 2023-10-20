@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import JobInfo from './JobInfo';
+import BtnContainer from './BtnContainer';
 import './style.css'
 
 const url = 'https://course-api.com/react-tabs-project';
@@ -7,6 +8,7 @@ const url = 'https://course-api.com/react-tabs-project';
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [jobs, setJobs] = useState([]);
+  const [currentItem, setCurrentItem] = useState(0);
 
   const fetchData = async () => {
     const response = await fetch(url);
@@ -24,10 +26,16 @@ const App = () => {
       <div className='loading'>Loading。。</div>
     )
   }
-
+  console.log(currentItem);
   return (
     <>
-      <JobInfo jobs={jobs} />
+      <BtnContainer
+        jobs={jobs}
+        currentItem={currentItem}
+        setCurrentItem={setCurrentItem}
+      />
+      <JobInfo jobs={jobs}
+        currentItem={currentItem} />
     </>
   )
 }
