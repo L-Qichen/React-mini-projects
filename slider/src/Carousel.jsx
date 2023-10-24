@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { shortList, list, longList } from './data'
+import { FaQuoteRight } from 'react-icons/fa';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const Carousel = () => {
   const [customers, setCustomers] = useState(shortList);
@@ -14,6 +16,7 @@ const Carousel = () => {
             <h5 className='customer-name'>{name}</h5>
             <p className='customer-title'>{title}</p>
             <p className='customer-quote'>{quote}</p>
+            <FaQuoteRight className="quote-icon" />
           </div>
         )
       })}
