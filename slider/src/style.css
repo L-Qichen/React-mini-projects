@@ -75,7 +75,7 @@
   place-items: center;
 }
 
-.prev-btn:hover, .next-btn :hover{
+.prev-btn:hover, .next-btn:hover{
   background: #8b5cf6;
 }
 
