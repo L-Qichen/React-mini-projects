@@ -2,18 +2,16 @@
 .main{
   /* 这里 margin 必须在 margin-top 前面，
   否则 margin-top 的效果会被 margin 覆盖掉 */
-  border: 1px solid green;
   margin: 0 auto;
   margin-top: 10rem;
   width: 80vw;
   max-width: 800px;
   position: relative;
   height: 450px;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .slider{
-  border: 1px solid red;
   text-align: center;
   width: 100%;
   position: absolute;
