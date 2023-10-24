@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { shortList, list, longList } from './data'
 import { FaQuoteRight } from 'react-icons/fa';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
@@ -20,6 +20,15 @@ const Carousel = () => {
       return result;
     });
   };
+
+  useEffect(() => {
+    let slideId = setInterval(() => {
+      nextSlide();
+    }, 3000);
+    return () => {
+      clearInterval(slideId);
+    }
+  }, [currentCustomer]);
 
   return (
     <div className='main'>
