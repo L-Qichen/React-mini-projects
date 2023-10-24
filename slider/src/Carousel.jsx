@@ -8,6 +8,7 @@ const Carousel = () => {
 
   return (
     <div className='main'>
+
       {customers.map((customer) => {
         const { id, image, name, title, quote } = customer;
         return (
@@ -20,6 +21,13 @@ const Carousel = () => {
           </div>
         )
       })}
+
+      <button type='button' className='prev-btn'>
+        <FiChevronLeft />
+      </button>
+      <button type='button' className='next-btn'>
+        <FiChevronRight />
+      </button>
     </div>
   );
 }
