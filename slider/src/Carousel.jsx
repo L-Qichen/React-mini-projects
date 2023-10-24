@@ -15,8 +15,8 @@ const Carousel = () => {
             <p className='customer-title'>{title}</p>
             <p className='customer-quote'>{quote}</p>
           </div>
-        );
-      })};
+        )
+      })}
     </div>
   );
 }
