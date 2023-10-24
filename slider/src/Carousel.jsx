@@ -10,7 +10,6 @@ const Carousel = () => {
   const prevSlide = () => {
     setCurrentCustomer((previousCustomer) => {
       const result = (previousCustomer - 1 + customers.length) % customers.length;
-      console.log(result);
       return result;
     });
   };
@@ -18,7 +17,6 @@ const Carousel = () => {
   const nextSlide = () => {
     setCurrentCustomer((previousCustomer) => {
       const result = (previousCustomer + 1) % customers.length;
-      console.log(result);
       return result;
     });
   };
