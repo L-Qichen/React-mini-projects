@@ -1,9 +1,27 @@
-const Form = () => {
+import { useState } from 'react'
+
+const Form = ({ addItem }) => {
+  const [name, setName] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addItem(name);
+  }
 
   return (
-    <>
-      <h1>Form</h1>
-    </>
+    <form className="todo-form">
+      <input type="text"
+        className="todo-input"
+        value={name}
+        onChange={e => setName(e.target.value)}
+      />
+      <button type="submit"
+        className="todo-btn"
+        onClick={handleSubmit}
+      >
+        Add
+      </button>
+    </form>
   )
 }
 

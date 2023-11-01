@@ -4,12 +4,17 @@ import Items from './Items'
 import './App.css'
 
 function App() {
+  const [itemList, setItemList] = useState([]);
+  const addItem = (itemName) => {
+    setItemList([...itemList, itemName]);
+    console.log(itemList);
+  }
 
   return (
-    <>
-      <Form />
+    <div className='main'>
+      <Form addItem={addItem} />
       <Items />
-    </>
+    </div>
   )
 }
 
