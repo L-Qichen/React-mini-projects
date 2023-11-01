@@ -1,12 +1,15 @@
 import SingleItem from "./SingleItem"
 
-const Items = () => {
+const Items = ({ itemList }) => {
 
   return (
-    <>
-      <h3>Items</h3>
-      <SingleItem />
-    </>
+    <div>
+      {
+        itemList.map((item) => {
+          return <SingleItem key={item.id} item={item} />
+        })
+      }
+    </div>
   )
 }
 

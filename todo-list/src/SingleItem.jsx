@@ -1,7 +1,9 @@
-const SingleItem = () => {
+const SingleItem = ({ item }) => {
 
   return (
-    <h5>Single Item</h5>
+    <div>
+      <div>{item.name}</div>
+    </div>
   )
 }
 
