@@ -6,6 +6,7 @@ import './App.css'
 
 function App() {
   const [itemList, setItemList] = useState([]);
+
   const addItem = (itemName) => {
     const newItem = {
       name: itemName,
@@ -15,10 +16,14 @@ function App() {
     setItemList([...itemList, newItem]);
   }
 
+  const removeItem = (itemId) => {
+    setItemList(itemList.filter((item) => item.id !== itemId));
+  }
+
   return (
     <div className='main'>
       <Form addItem={addItem} />
-      <Items itemList={itemList} />
+      <Items itemList={itemList} removeItem={removeItem} />
     </div>
   )
 }
