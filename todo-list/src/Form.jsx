@@ -5,7 +5,9 @@ const Form = ({ addItem }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!name) return;
     addItem(name);
+    setName('');
   }
 
   return (
