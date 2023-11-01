@@ -7,7 +7,6 @@ function App() {
   const [itemList, setItemList] = useState([]);
   const addItem = (itemName) => {
     setItemList([...itemList, itemName]);
-    console.log(itemList);
   }
 
   return (
