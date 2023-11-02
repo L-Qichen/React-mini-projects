@@ -4,8 +4,17 @@ import Items from './Items'
 import { v4 as uuid } from 'uuid';
 import './App.css'
 
+
+
+const setLocalStorage = (itemList) => {
+  localStorage.setItem("list", JSON.stringify(itemList));
+
+}
+
+const defaultList = JSON.parse(localStorage.getItem("list") || '[]');
+
 function App() {
-  const [itemList, setItemList] = useState([]);
+  const [itemList, setItemList] = useState(defaultList);
 
   const addItem = (itemName) => {
     const newItem = {
@@ -13,11 +22,15 @@ function App() {
       completed: false,
       id: uuid(),
     }
-    setItemList([...itemList, newItem]);
+    const newItemList = [...itemList, newItem]
+    setItemList(newItemList);
+    setLocalStorage(newItemList);
   }
 
   const removeItem = (itemId) => {
-    setItemList(itemList.filter((item) => item.id !== itemId));
+    const newItemList = itemList.filter((item) => item.id !== itemId);
+    setItemList(newItemList);
+    setLocalStorage(newItemList);
   }
 
   return (
@@ -28,4 +41,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
