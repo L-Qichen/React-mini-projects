@@ -2,6 +2,8 @@ import { useState } from 'react'
 import Form from './Form'
 import Items from './Items'
 import { v4 as uuid } from 'uuid';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
 
 
@@ -25,12 +27,14 @@ function App() {
     const newItemList = [...itemList, newItem]
     setItemList(newItemList);
     setLocalStorage(newItemList);
+    toast.success('item added to the list');
   }
 
   const removeItem = (itemId) => {
     const newItemList = itemList.filter((item) => item.id !== itemId);
     setItemList(newItemList);
     setLocalStorage(newItemList);
+    toast.success('item deleted');
   }
 
   const editItem = (itemId) => {
@@ -47,6 +51,7 @@ function App() {
 
   return (
     <div className='main'>
+      <ToastContainer position='top-center' />
       <Form addItem={addItem} />
       <Items itemList={itemList} removeItem={removeItem} editItem={editItem} />
     </div>
