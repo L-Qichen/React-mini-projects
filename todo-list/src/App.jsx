@@ -33,10 +33,22 @@ function App() {
     setLocalStorage(newItemList);
   }
 
+  const editItem = (itemId) => {
+    const newItemList = itemList.map((item) => {
+      if (item.id === itemId) {
+        const newItem = { ...item, completed: !item.completed };
+        return newItem;
+      };
+      return item;
+    });
+    setItemList(newItemList);
+    setLocalStorage(newItemList);
+  }
+
   return (
     <div className='main'>
       <Form addItem={addItem} />
-      <Items itemList={itemList} removeItem={removeItem} />
+      <Items itemList={itemList} removeItem={removeItem} editItem={editItem} />
     </div>
   )
 }
