@@ -11,19 +11,22 @@ const Form = ({ addItem }) => {
   }
 
   return (
-    <form className="todo-form">
-      <input type="text"
-        className="todo-input"
-        value={name}
-        onChange={e => setName(e.target.value)}
-      />
-      <button type="submit"
-        className="todo-btn"
-        onClick={handleSubmit}
-      >
-        Add
-      </button>
-    </form>
+    <>
+      <h4 className='todo-header'>To Do List</h4>
+      <form className="todo-form">
+        <input type="text"
+          className="todo-input"
+          value={name}
+          onChange={e => setName(e.target.value)}
+        />
+        <button type="submit"
+          className="todo-btn"
+          onClick={handleSubmit}
+        >
+          Add
+        </button>
+      </form>
+    </>
   )
 }
 

@@ -3,7 +3,7 @@ import SingleItem from "./SingleItem"
 const Items = ({ itemList, removeItem, editItem }) => {
 
   return (
-    <div>
+    <div className="items">
       {
         itemList.map((item) => {
           return <SingleItem key={item.id} item={item} removeItem={removeItem} editItem={editItem} />
