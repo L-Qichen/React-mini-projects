@@ -24,7 +24,7 @@ function App() {
       completed: false,
       id: uuid(),
     }
-    const newItemList = [...itemList, newItem]
+    const newItemList = [...itemList, newItem];
     setItemList(newItemList);
     setLocalStorage(newItemList);
     toast.success('item added to the list');
