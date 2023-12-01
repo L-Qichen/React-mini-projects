@@ -1,5 +1,6 @@
 import ClassContainer from "./ClassCounter"
 import { FunctionCounter } from "./FunctionCounter"
+import Registration from "./Registration"
 import './App.css'
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <>
       <ClassContainer />
       <FunctionCounter />
+      <Registration />
     </>
   )
 }
