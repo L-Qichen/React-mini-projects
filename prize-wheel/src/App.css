@@ -1,0 +1,122 @@
+.out-circle{
+  width: 22rem;
+  height: 22rem;
+  margin: 2rem auto;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  padding: 1rem;
+  background: linear-gradient(270deg, rgba(255,125,88,1) 0%, rgba(193,0,15,1) 100%);
+  box-shadow: 3px 2px 12px 5px rgba(0, 0, 0, 0.2);
+}
+.in-circle{
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ffffff50;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.first-container,
+.second-container,
+.third-container,
+.fourth-container,
+.fifth-container,
+.sixth-container{
+  width: 20rem;
+  height: 20rem;
+  background: rgba(255, 255, 255, 0.3);
+  position:absolute;
+  left: 50%;
+  top: -50%;
+  transform-origin: bottom left;
+  transform: skewY(-30deg);
+  border: 1px solid #ffffffa1;
+}
+.second-container{
+  rotate: 60deg;
+}
+.third-container{
+  rotate: 120deg;
+}
+.fourth-container{
+  rotate: 180deg;
+}
+.fifth-container{
+  rotate: 240deg;
+}
+.sixth-container{
+  rotate: -60deg;
+}
+.content-1,
+.content-2,
+.content-3,
+.content-4,
+.content-5,
+.content-6{
+  width: 7rem;
+  height: 7rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: rotate(50deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.content-1 > div,
+.content-2 > div,
+.content-3 > div,
+.content-4 > div,
+.content-5 > div,
+.content-6 > div{
+  text-shadow: #fc0 1px 1px 5px;
+}
+
+.pointer-body{
+  width: 2rem;
+  height: 2rem;
+  background: rgb(218, 27, 43);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(80%);
+}
+.pointer-head{
+  border-top: 1rem solid transparent;
+  border-left: 1rem solid transparent;
+  border-bottom: 1rem solid rgb(218, 27, 43);
+  border-right: 1rem solid transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-15%);
+}
+.btn{
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  color: #fff;
+  background: #4768ff;
+  border: transparent;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  padding: 6px;
+  font-size: 16px;
+  margin-top: 16px;
+  box-shadow:  0 1px 3px 0 rgba(0, 0, 0, 0.1), 
+  0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease-in-out all;
+  text-transform: capitalize;
+}
+.btn:hover{
+  background: #0029de;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -2px rgba(0, 0, 0, 0.05);;
+}

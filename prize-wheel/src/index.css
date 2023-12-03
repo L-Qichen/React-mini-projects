@@ -18,6 +18,7 @@ body{
   width: 45vw;
   min-width: 450px;
   margin: 3.5rem auto;
+  position: relative;
 }
 h1{
   margin: 1rem auto;
