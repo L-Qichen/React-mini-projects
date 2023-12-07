@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
   const [isStopped, setIsStopped] = useState(true);
   const [selectedNum, setSelectedNum] = useState([]);
+  const [entry, setEntry] = useState([]);
 
   const selectionRange = [1, 2, 3, 4, 5, 6];
 
@@ -18,6 +19,10 @@ function App() {
     }
     setSelectedNum(newSelectedNum);
   };
+
+  useEffect(() => {
+    console.log('User Entry:', entry);
+  }, [entry]);
 
 
   const handleOnClick = () => {
@@ -37,6 +42,7 @@ function App() {
       }, 5000);
 
       console.log('Selected Numbers:', selectedNum);
+      setEntry(selectedNum);
       setSelectedNum([]);
     } else {
       return;
