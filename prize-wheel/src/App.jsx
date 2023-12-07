@@ -6,8 +6,8 @@ function App() {
 
   const handleOnClick = () => {
     if (isStopped) {
-      const randomRounds = Math.floor(Math.random() * 6);
-      const randomDeg = Math.floor(Math.random() * (25 - 5) + 5);
+      const randomRounds = Math.floor(Math.random() * (7 - 3) + 3);
+      const randomDeg = Math.floor(Math.random() * (27 - 7) + 7);
       const finalDeg = randomRounds * 360 + randomDeg;
       const wheel = document.getElementById("wheel");
       wheel.style.transform = `rotate(${finalDeg}deg)`;
