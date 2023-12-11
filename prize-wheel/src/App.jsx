@@ -24,12 +24,16 @@ function App() {
     console.log('User Entry:', entry);
   }, [entry]);
 
+  const calculateSection = (degree) => {
+    const section = Math.floor(degree / 60) + 1;
+    console.log(section);
+  }
 
   const handleOnClick = () => {
     if (isStopped) {
       const randomRounds = Math.floor(Math.random() * (7 - 3) + 3);
       const randomDeg = Math.floor(Math.random() * (360 - 10) + 10);
-      const finalDeg = randomRounds * 360 + randomDeg;
+      const finalDeg = -(randomRounds * 360 + randomDeg);
       const wheel = document.getElementById("wheel");
       wheel.style.transform = `rotate(${finalDeg}deg)`;
       wheel.style.transition = "transform 3s cubic-bezier(.2,.93,.43,1)";
@@ -39,6 +43,7 @@ function App() {
         wheel.style.transform = "rotate(0deg)";
         wheel.style.transition = "none";
         setIsStopped(true);
+        calculateSection(randomDeg);
       }, 5000);
 
       console.log('Selected Numbers:', selectedNum);
@@ -58,32 +63,32 @@ function App() {
 
             <div className='first-container'>
               <div className='content-1'>
-                <div>$100</div>
+                <div>1</div>
               </div>
             </div>
             <div className='second-container'>
               <div className='content-2'>
-                <div>$200</div>
+                <div>2</div>
               </div>
             </div>
             <div className='third-container'>
               <div className='content-3'>
-                <div>$300</div>
+                <div>3</div>
               </div>
             </div>
             <div className='fourth-container'>
               <div className='content-4'>
-                <div>$400</div>
+                <div>4</div>
               </div>
             </div>
             <div className='fifth-container'>
               <div className='content-5'>
-                <div>$500</div>
+                <div>5</div>
               </div>
             </div>
             <div className='sixth-container'>
               <div className='content-6'>
-                <div>$600</div>
+                <div>6</div>
               </div>
             </div>
 
