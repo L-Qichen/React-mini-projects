@@ -29,6 +29,8 @@ function App() {
     console.log(section);
   }
 
+  const winNum = Math.ceil(Math.random() * (6 - 1) + 1);
+
   const handleOnClick = () => {
     if (isStopped) {
       const randomRounds = Math.floor(Math.random() * (7 - 3) + 3);
@@ -58,46 +60,54 @@ function App() {
     <div className='main'>
       <div className='container'>
         <h1>Prize Wheel</h1>
-        <div className='out-circle' >
-          <div className='in-circle' id='wheel'>
+        <div className='wheel-screen-container'>
+          <div className='screen'>
+            <h2>Win Number:</h2>
+            <div className='screen-body'>
+              <span>{winNum}</span>
+            </div>
+          </div>
 
-            <div className='first-container'>
-              <div className='content-1'>
-                <div>1</div>
-              </div>
-            </div>
-            <div className='second-container'>
-              <div className='content-2'>
-                <div>2</div>
-              </div>
-            </div>
-            <div className='third-container'>
-              <div className='content-3'>
-                <div>3</div>
-              </div>
-            </div>
-            <div className='fourth-container'>
-              <div className='content-4'>
-                <div>4</div>
-              </div>
-            </div>
-            <div className='fifth-container'>
-              <div className='content-5'>
-                <div>5</div>
-              </div>
-            </div>
-            <div className='sixth-container'>
-              <div className='content-6'>
-                <div>6</div>
-              </div>
-            </div>
+          <div className='out-circle' >
+            <div className='in-circle' id='wheel'>
 
+              <div className='first-container'>
+                <div className='content-1'>
+                  <div>1</div>
+                </div>
+              </div>
+              <div className='second-container'>
+                <div className='content-2'>
+                  <div>2</div>
+                </div>
+              </div>
+              <div className='third-container'>
+                <div className='content-3'>
+                  <div>3</div>
+                </div>
+              </div>
+              <div className='fourth-container'>
+                <div className='content-4'>
+                  <div>4</div>
+                </div>
+              </div>
+              <div className='fifth-container'>
+                <div className='content-5'>
+                  <div>5</div>
+                </div>
+              </div>
+              <div className='sixth-container'>
+                <div className='content-6'>
+                  <div>6</div>
+                </div>
+              </div>
 
+              <div className='pointer-body'></div>
+              <div className='pointer-head'></div>
+
+            </div>
           </div>
         </div>
-
-        <div className='pointer-body'></div>
-        <div className='pointer-head'></div>
 
         <div className='footer'>
           <button type='button'
