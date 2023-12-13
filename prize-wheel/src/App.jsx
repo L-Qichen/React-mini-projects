@@ -1,5 +1,16 @@
 import { useState, useEffect } from 'react'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import './App.css'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <h2>New Page</h2>,
+  },
+]);
 
 function App() {
   const [isStopped, setIsStopped] = useState(true);
