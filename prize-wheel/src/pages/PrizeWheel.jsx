@@ -2,22 +2,14 @@ import { useState, useEffect } from 'react'
 
 const PrizeWheel = () => {
   const [isStopped, setIsStopped] = useState(true);
-  const [selectedNum, setSelectedNum] = useState([]);
-  const [entry, setEntry] = useState([]);
+  const [selectedNum, setSelectedNum] = useState(null);
+  const [entry, setEntry] = useState(null);
   const [winNum, setWinNum] = useState(0);
 
   const selectionRange = [1, 2, 3, 4, 5, 6];
 
   const handleSelectedNum = (number) => {
-    const newSelectedNum = [...selectedNum];
-    const index = newSelectedNum.indexOf(number);
-
-    if (index === -1) {
-      newSelectedNum.push(number);
-    } else {
-      newSelectedNum.splice(index, 1);
-    }
-    setSelectedNum(newSelectedNum);
+    setSelectedNum(number);
   };
 
   useEffect(() => {
@@ -48,7 +40,7 @@ const PrizeWheel = () => {
 
       console.log('Selected Numbers:', selectedNum);
       setEntry(selectedNum);
-      setSelectedNum([]);
+      setSelectedNum(null);
     } else {
       return;
     }
@@ -121,7 +113,7 @@ const PrizeWheel = () => {
                 return (
                   <button
                     key={number}
-                    className={selectedNum.includes(number) ? 'num-btn selected' : 'num-btn'}
+                    className={selectedNum === number ? 'num-btn selected' : 'num-btn'}
                     onClick={() => handleSelectedNum(number)}
                   >
                     {number}
