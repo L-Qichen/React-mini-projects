@@ -26,12 +26,8 @@ const PrizeWheel = () => {
 
   const calculateSection = (degree) => {
     const section = Math.floor(degree / 60) + 1;
-    console.log(section);
+    return section;
   }
-
-  useEffect(() => {
-    setWinNum(Math.ceil(Math.random() * (6 - 1) + 1));
-  }, []);
 
   const handleOnClick = () => {
     if (isStopped) {
@@ -47,7 +43,7 @@ const PrizeWheel = () => {
         wheel.style.transform = "rotate(0deg)";
         wheel.style.transition = "none";
         setIsStopped(true);
-        calculateSection(randomDeg);
+        setWinNum(calculateSection(randomDeg));
       }, 5000);
 
       console.log('Selected Numbers:', selectedNum);
@@ -104,10 +100,11 @@ const PrizeWheel = () => {
                 </div>
               </div>
 
-              <div className='pointer-body'></div>
-              <div className='pointer-head'></div>
-
             </div>
+
+            <div className='pointer-body'></div>
+            <div className='pointer-head'></div>
+
           </div>
         </div>
 

@@ -44,6 +44,7 @@ h2{
   padding: 1rem;
   background: linear-gradient(270deg, rgba(255,125,88,1) 0%, rgba(193,0,15,1) 100%);
   box-shadow: 3px 2px 12px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 .in-circle{
   width: 100%;
