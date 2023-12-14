@@ -4,6 +4,7 @@ const PrizeWheel = () => {
   const [isStopped, setIsStopped] = useState(true);
   const [selectedNum, setSelectedNum] = useState([]);
   const [entry, setEntry] = useState([]);
+  const [winNum, setWinNum] = useState(0);
 
   const selectionRange = [1, 2, 3, 4, 5, 6];
 
@@ -28,7 +29,9 @@ const PrizeWheel = () => {
     console.log(section);
   }
 
-  const winNum = Math.ceil(Math.random() * (6 - 1) + 1);
+  useEffect(() => {
+    setWinNum(Math.ceil(Math.random() * (6 - 1) + 1));
+  }, []);
 
   const handleOnClick = () => {
     if (isStopped) {

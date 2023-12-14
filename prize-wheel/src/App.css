@@ -5,14 +5,14 @@ h2{
   text-shadow: #fc0 2px 1px 2px;
 }
 .container{
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   width: 70vw;
   min-width: 450px;
   margin: 3rem auto;
   position: relative;
 }
 .wheel-screen-container{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -21,7 +21,7 @@ h2{
 .screen{
   width: 22rem;
   height: 22rem;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 .screen-body{
   border: 1px solid black;
