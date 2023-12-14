@@ -7,6 +7,11 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const [hasAccount, setHasAccount] = useState(false);
+  const [storedUser, setStoredUser] = useState({
+    userName: "",
+    userPassword: "",
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,17 +32,35 @@ const Login = () => {
     }
   }
 
-  const handleInputChange = (e) => {
+  const handleRegistrationInputChange = (e) => {
     setUser({
       ...user,
       [e.target.name]: e.target.value,
     })
   }
 
+  const handleLoginInputChange = (e) => {
+    setStoredUser({
+      ...user,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleLogin = () => {
+    console.log(user);
+  }
+
+  const handleSwitch = () => {
+    setHasAccount(!hasAccount);
+  }
+
   return (
     <div className='component-container'>
-      <h1>Registration Form</h1>
-      <form className='registration-form' onSubmit={handleSubmit}>
+      <h1>{hasAccount ? "Login Form" : "Registration Form"}</h1>
+      <form className='registration-form'
+        onSubmit={handleSubmit}
+        style={{ display: hasAccount ? 'none' : 'grid' }}
+      >
 
         <label htmlFor='name'>Name: </label>
         <input type='text'
@@ -45,7 +68,7 @@ const Login = () => {
           className='name'
           name='name'
           value={user.name}
-          onChange={handleInputChange} />
+          onChange={handleRegistrationInputChange} />
 
         <label htmlFor='email'>Email: </label>
         <input type='email'
@@ -53,7 +76,7 @@ const Login = () => {
           className='email'
           name='email'
           value={user.email}
-          onChange={handleInputChange} />
+          onChange={handleRegistrationInputChange} />
 
         <label htmlFor='password'>Password: </label>
         <input type='password'
@@ -61,10 +84,40 @@ const Login = () => {
           className='password'
           name='password'
           value={user.password}
-          onChange={handleInputChange} />
+          onChange={handleRegistrationInputChange} />
 
         <button type='submit' className='btn'>Submit</button>
       </form>
+
+      <form className='login-form'
+        onSubmit={handleLogin}
+        style={{ display: hasAccount ? 'grid' : 'none' }}
+      >
+
+        <label htmlFor='userName'>Name: </label>
+        <input type='text'
+          id='userName'
+          className='userName'
+          name='userName'
+          value={storedUser.userName}
+          onChange={handleLoginInputChange} />
+
+        <label htmlFor='userPassword'>Password: </label>
+        <input type='userPassword'
+          id='userPassword'
+          className='userPassword'
+          name='userPassword'
+          value={storedUser.userPassword}
+          onChange={handleLoginInputChange} />
+
+        <button type='submit' className='btn'>Login</button>
+      </form>
+
+      <button className='switch-btn'
+        onClick={handleSwitch}
+      >
+        {hasAccount ? "Registration" : "Login"}
+      </button>
     </div>
   );
 };
