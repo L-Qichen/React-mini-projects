@@ -13,7 +13,12 @@ const Login = () => {
     if (user.name == "" || user.email == "" || user.password == "") {
       alert("Please insert All three fields.");
     } else {
+      const userList = JSON.parse(localStorage.getItem("userList")) || [];
+      userList.push(user);
+      localStorage.setItem("userList", JSON.stringify(userList));
       console.log(user);
+      const users = localStorage.getItem("userList");
+      console.log(users);
       setUser({
         name: "",
         email: "",
