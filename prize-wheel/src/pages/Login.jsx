@@ -41,13 +41,23 @@ const Login = () => {
 
   const handleLoginInputChange = (e) => {
     setStoredUser({
-      ...user,
+      ...storedUser,
       [e.target.name]: e.target.value,
     })
   }
 
   const handleLogin = () => {
-    console.log(user);
+    const userList = JSON.parse(localStorage.getItem("userList")) || [];
+    const existUser = userList.find(
+      (element) => {
+        return element.name === storedUser.userName && element.password === storedUser.userPassword;
+      }
+    );
+    if (existUser) {
+      console.log("Login successful");
+    } else {
+      alert("User does not exist");
+    }
   }
 
   const handleSwitch = () => {
@@ -103,7 +113,7 @@ const Login = () => {
           onChange={handleLoginInputChange} />
 
         <label htmlFor='userPassword'>Password: </label>
-        <input type='userPassword'
+        <input type='password'
           id='userPassword'
           className='userPassword'
           name='userPassword'
