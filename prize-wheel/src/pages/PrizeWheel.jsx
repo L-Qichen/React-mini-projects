@@ -17,7 +17,7 @@ const PrizeWheel = () => {
 
   useEffect(() => {
     console.log('User Entry:', entry);
-  }, [entry]);
+  }, [entry, winNum]);
 
   const calculateSection = (degree) => {
     const section = Math.floor(degree / 60) + 1;
@@ -38,8 +38,18 @@ const PrizeWheel = () => {
         wheel.style.transform = "rotate(0deg)";
         wheel.style.transition = "none";
         setIsStopped(true);
-        setWinNum(calculateSection(randomDeg));
+        const newWinNum = calculateSection(randomDeg);
+        setWinNum(newWinNum);
+        if (entry !== null && entry === newWinNum) {
+          console.log("true");
+          alert("You Win!");
+        } else {
+          console.log("false");
+          alert("Try Again.");
+        }
+        // setWinNum(calculateSection(randomDeg));
       }, 5000);
+
 
       console.log('Selected Numbers:', selectedNum);
       setEntry(selectedNum);
