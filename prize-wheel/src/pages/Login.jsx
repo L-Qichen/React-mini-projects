@@ -1,7 +1,10 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import '../Login.css'
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -29,6 +32,8 @@ const Login = () => {
         email: "",
         password: "",
       });
+
+      navigate("/prize-wheel");
     }
   }
 
@@ -54,7 +59,7 @@ const Login = () => {
       }
     );
     if (existUser) {
-      console.log("Login successful");
+      navigate("/prize-wheel");
     } else {
       alert("User does not exist");
     }
