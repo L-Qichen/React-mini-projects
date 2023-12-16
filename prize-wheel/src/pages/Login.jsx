@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { currentUserContext } from '../App'
 import '../Login.css'
 
 const Login = () => {
+  const { currentUser, currLogin } = useContext(currentUserContext);
   const navigate = useNavigate();
 
   const [user, setUser] = useState({
@@ -24,7 +26,6 @@ const Login = () => {
       const userList = JSON.parse(localStorage.getItem("userList")) || [];
       userList.push(user);
       localStorage.setItem("userList", JSON.stringify(userList));
-      console.log(user);
       const users = localStorage.getItem("userList");
       console.log(users);
       setUser({
@@ -32,7 +33,7 @@ const Login = () => {
         email: "",
         password: "",
       });
-
+      currLogin(user);
       navigate("/prize-wheel");
     }
   }
@@ -59,6 +60,7 @@ const Login = () => {
       }
     );
     if (existUser) {
+      currLogin(existUser);
       navigate("/prize-wheel");
     } else {
       alert("User does not exist");

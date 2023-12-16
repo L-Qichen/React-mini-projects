@@ -7,6 +7,7 @@ import {
   Login,
   UserResult,
 } from './pages';
+import { createContext, useState } from "react";
 import './App.css'
 
 const router = createBrowserRouter([
@@ -24,9 +25,26 @@ const router = createBrowserRouter([
   },
 ]);
 
-function App() {
+export const currentUserContext = createContext();
 
-  return <RouterProvider router={router} />;
+function App() {
+  const storedCurrUser = JSON.parse(localStorage.getItem("currentUser")) || null;
+  const [currentUser, setCurrentUser] = useState(storedCurrUser);
+
+  const currLogin = (user) => {
+    setCurrentUser(user);
+    localStorage.setItem('currentUser', JSON.stringify(user));
+  }
+
+  const Logout = () => {
+    setCurrentUser(null);
+  }
+
+  return (
+    <currentUserContext.Provider value={{ currentUser, currLogin, Logout }}>
+      <RouterProvider router={router} />
+    </currentUserContext.Provider>
+  );
 }
 
 export default App

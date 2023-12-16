@@ -1,6 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import { currentUserContext } from '../App'
 
 const PrizeWheel = () => {
+  const { currentUser } = useContext(currentUserContext);
+  console.log(currentUser);
   const [isStopped, setIsStopped] = useState(true);
   const [selectedNum, setSelectedNum] = useState(null);
   const [entry, setEntry] = useState(null);
