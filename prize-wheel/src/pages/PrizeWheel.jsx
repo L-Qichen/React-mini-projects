@@ -1,7 +1,9 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { currentUserContext } from '../App'
 
 const PrizeWheel = () => {
+  const navigate = useNavigate();
   const { currentUser } = useContext(currentUserContext);
   console.log(currentUser);
   const [isStopped, setIsStopped] = useState(true);
@@ -15,9 +17,9 @@ const PrizeWheel = () => {
     setSelectedNum(number);
   };
 
-  useEffect(() => {
-    console.log('User Entry:', entry);
-  }, [entry, winNum]);
+  // useEffect(() => {
+  //   console.log('User Entry:', entry);
+  // }, [entry]);
 
   const calculateSection = (degree) => {
     const section = Math.floor(degree / 60) + 1;
@@ -27,7 +29,7 @@ const PrizeWheel = () => {
   const handleOnClick = () => {
     if (isStopped) {
       const randomRounds = Math.floor(Math.random() * (7 - 3) + 3);
-      const randomDeg = Math.floor(Math.random() * (360 - 10) + 10);
+      const randomDeg = Math.floor(Math.random() * (360 - 0) + 0);
       const finalDeg = -(randomRounds * 360 + randomDeg);
       const wheel = document.getElementById("wheel");
       wheel.style.transform = `rotate(${finalDeg}deg)`;
@@ -35,9 +37,12 @@ const PrizeWheel = () => {
       setIsStopped(false);
 
       setTimeout(() => {
-        wheel.style.transform = "rotate(0deg)";
-        wheel.style.transition = "none";
-        setIsStopped(true);
+        setTimeout(() => {
+          wheel.style.transform = "rotate(0deg)";
+          wheel.style.transition = "none";
+          setIsStopped(true);
+        }, 3000);
+
         const newWinNum = calculateSection(randomDeg);
         setWinNum(newWinNum);
         if (entry !== null && entry === newWinNum) {
@@ -47,6 +52,17 @@ const PrizeWheel = () => {
           console.log("false");
           alert("Try Again.");
         }
+
+        const gameResult = {
+          user: currentUser,
+          entry: entry,
+          winNum: newWinNum,
+          isWin: entry === newWinNum ? true : false,
+        };
+
+        const gameHistory = JSON.parse(localStorage.getItem("gameHistory")) || [];
+        gameHistory.push(gameResult);
+        localStorage.setItem("gameHistory", JSON.stringify(gameHistory));
         // setWinNum(calculateSection(randomDeg));
       }, 5000);
 
@@ -57,6 +73,10 @@ const PrizeWheel = () => {
     } else {
       return;
     }
+  }
+
+  const handleHistoryClick = () => {
+    navigate("/user-result");
   }
 
   return (
@@ -135,6 +155,12 @@ const PrizeWheel = () => {
               }
             )}
           </div>
+          <button type='button'
+            className='btn'
+            onClick={handleHistoryClick}
+          >
+            History
+          </button>
         </div>
       </div>
 
