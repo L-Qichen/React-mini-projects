@@ -22,15 +22,14 @@ const UserResult = () => {
       <div>
         <h1>Welcome, {currentUser ? currentUser.name : 'Guest'}!</h1>
         <div>
-          <h3>Your Game History:</h3>
+          <h2>Your Game History:</h2>
           <ul>
             {gameHistory.map((game, index) => (
               <li key={index}>
                 <strong>Game {index + 1}:</strong>
                 <p>Entry: {game.entry}</p>
                 <p>Win Number: {game.winNum}</p>
-                <p>Result: {game.isWin ? 'You Win!' : 'You Lose.'}</p>
-                {/* Add more details as needed */}
+                <p>Result: {game.isWin ? 'Win' : 'Lose'}</p>
               </li>
             ))}
           </ul>
